@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guesthouse Room Request</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">Guesthouse booking desk</p>
+        <h1>Request a guest room stay</h1>
+        <p class="lede">
+          Tell us when you would like to stay and what you need. We currently
+          have seven guest rooms, and every request is reviewed by an admin
+          before confirmation.
+        </p>
+      </div>
+      <a class="secondary-link" href="admin.html">Admin allotment page</a>
+    </header>
+
+    <main class="layout">
+      <section class="card form-card" aria-labelledby="request-heading">
+        <h2 id="request-heading">Guest request details</h2>
+        <form id="requestForm" novalidate>
+          <div class="grid two-columns">
+            <label>
+              Full name
+              <input id="guestName" name="guestName" autocomplete="name" required />
+            </label>
+            <label>
+              Mobile number
+              <input id="phone" name="phone" type="tel" autocomplete="tel" required />
+            </label>
+          </div>
+
+          <div class="grid two-columns">
+            <label>
+              Email address
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </label>
+            <label>
+              Organisation / reference
+              <input id="reference" name="reference" placeholder="Optional" />
+            </label>
+          </div>
+
+          <div class="grid three-columns">
+            <label>
+              Check-in date
+              <input id="checkIn" name="checkIn" type="date" required />
+            </label>
+            <label>
+              Check-out date
+              <input id="checkOut" name="checkOut" type="date" required />
+            </label>
+            <label>
+              Rooms required
+              <select id="roomsRequired" name="roomsRequired" required>
+                <option value="">Select</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="grid three-columns">
+            <label>
+              Adults
+              <input id="adults" name="adults" type="number" min="1" value="1" required />
+            </label>
+            <label>
+              Children
+              <input id="children" name="children" type="number" min="0" value="0" required />
+            </label>
+            <label>
+              Arrival time
+              <input id="arrivalTime" name="arrivalTime" type="time" />
+            </label>
+          </div>
+
+          <label>
+            Purpose of stay
+            <select id="purpose" name="purpose" required>
+              <option value="">Select</option>
+              <option>Business</option>
+              <option>Family visit</option>
+              <option>Tourism</option>
+              <option>Event / function</option>
+              <option>Other</option>
+            </select>
+          </label>
+
+          <label>
+            Special requests or accessibility needs
+            <textarea id="notes" name="notes" rows="4" placeholder="Meals, late arrival, ground-floor preference, extra bedding, etc."></textarea>
+          </label>
+
+          <div class="actions">
+            <button type="submit">Submit request</button>
+            <button type="reset" class="button-muted">Clear form</button>
+          </div>
+          <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+
+      <aside class="card" aria-labelledby="status-heading">
+        <h2 id="status-heading">Your recent requests</h2>
+        <p class="muted">Requests saved on this device are listed below.</p>
+        <div id="guestRequests" class="request-list"></div>
+      </aside>
+    </main>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guesthouse Admin Allotment</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header admin-header">
+      <div>
+        <p class="eyebrow">Admin desk</p>
+        <h1>Authenticate and allot room requests</h1>
+        <p class="lede">
+          Review submitted guest requests, approve or reject them, and assign
+          available rooms from the seven-room guesthouse inventory.
+        </p>
+      </div>
+      <a class="secondary-link" href="index.html">Guest request page</a>
+    </header>
+
+    <main class="layout admin-layout">
+      <section class="card" aria-labelledby="inventory-heading">
+        <h2 id="inventory-heading">Room inventory</h2>
+        <div id="roomInventory" class="inventory-grid"></div>
+      </section>
+
+      <section class="card" aria-labelledby="admin-heading">
+        <div class="section-title-row">
+          <div>
+            <h2 id="admin-heading">Requests awaiting action</h2>
+            <p class="muted">Approved stays block selected rooms for overlapping dates.</p>
+          </div>
+          <button id="seedDemo" class="button-muted" type="button">Add demo request</button>
+        </div>
+        <div id="adminRequests" class="request-list admin-list"></div>
+      </section>
+    </main>
+
+    <script src="app.js" defer></script>
+    <script src="admin.js" defer></script>
+  </body>
+</html>
